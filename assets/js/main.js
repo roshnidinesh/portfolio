@@ -32,8 +32,9 @@
    * Scrolls to an element with header offset
    */
   const scrollto = (el) => {
+    let elementPos = select(el).offsetTop
     window.scrollTo({
-      top: 0,
+      top: elementPos,
       behavior: 'smooth'
     })
   }
@@ -96,7 +97,6 @@
         })
         section.classList.add('section-show')
       }
-
       scrollto(this.hash)
     }
   }, true)
@@ -125,7 +125,6 @@
         setTimeout(function() {
           initial_nav.classList.add('section-show')
         }, 350);
-
         scrollto(window.location.hash)
       }
     }
